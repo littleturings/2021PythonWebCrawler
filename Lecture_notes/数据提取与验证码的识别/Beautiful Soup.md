@@ -47,7 +47,7 @@ bs = BeautifulSoup(html,"lxml")
 
 ```
 #以以下代码为例子
-<title>bilibili</title>
+<title>知乎</title>
 <div class='info' float='left'>Welcome to SXT</div>
 <div class='info' float='right'>
     <span>Good Good Study</span>
