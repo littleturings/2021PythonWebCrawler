@@ -49,10 +49,10 @@ bs = BeautifulSoup(html,"lxml")
 ```html
 #以以下代码为例子
 <title>知乎</title>
-<div class="info" float="left">Welcome to SXT</div>
+<div class="info" float="left">Welcome to Zhihu</div>
 <div class="info" float="right">
   <span>Good Good Study</span>
-  <a href="www.bilibili.com"></a>
+  <a href="www.zhihu.com"></a>
   <strong><!--没用--></strong>
 </div>
 ```
