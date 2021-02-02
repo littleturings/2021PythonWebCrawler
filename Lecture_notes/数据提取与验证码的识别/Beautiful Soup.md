@@ -47,11 +47,11 @@ bs = BeautifulSoup(html,"lxml")
 
 ```
 #以以下代码为例子
-<title>尚学堂</title>
+<title>知乎</title>
 <div class='info' float='left'>Welcome to SXT</div>
 <div class='info' float='right'>
     <span>Good Good Study</span>
-    <a href='www.bjsxt.cn'></a>
+    <a href='www.bilibili.com'></a>
     <strong><!--没用--></strong>
 </div>
 ```
@@ -61,7 +61,7 @@ bs = BeautifulSoup(html,"lxml")
 #以lxml方式解析
 soup = BeautifulSoup(info, 'lxml')
 print(soup.title)
-# <title>尚学堂</title>
+# <title>bilibili</title>
 
 ```
 **注意**
@@ -85,7 +85,7 @@ print(soup.a['href'])
 ```
 print(soup.title.string)
 print(soup.title.text)
-#尚学堂
+#bilibili
 ```
 
 #### 4.3 BeautifulSoup

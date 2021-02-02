@@ -27,7 +27,7 @@ json简单说就是javascript中的对象和数组，所以这两种结构就是
 import json
 
 strList = '[1, 2, 3, 4]'
-strDict = '{"city": "北京", "name": "范爷"}'
+strDict = '{"city": "上海", "name": "施想"}'
 json.loads(strList) 
 # [1, 2, 3, 4]
 json.loads(strDict) # json数据自动按Unicode存储
@@ -47,7 +47,7 @@ import json
 
 listStr = [1, 2, 3, 4]
 tupleStr = (1, 2, 3, 4)
-dictStr = {"city": "北京", "name": "范爷"}
+dictStr = {"city": "上海", "name": "施想"}
 
 json.dumps(listStr)
 # '[1, 2, 3, 4]'
@@ -61,7 +61,7 @@ json.dumps(dictStr)
 # '{"city": "\\u5317\\u4eac", "name": "\\u5927\\u5218"}'
 
 print(json.dumps(dictStr, ensure_ascii=False))
-# {"city": "北京", "name": "范爷"}
+# {"city": "上海", "name": "施想"}
 
 ```
 
@@ -71,10 +71,10 @@ print(json.dumps(dictStr, ensure_ascii=False))
 ```
 import json
 
-listStr = [{"city": "北京"}, {"name": "范爷"}]
+listStr = [{"city": "上海"}, {"name": "施想"}]
 json.dump(listStr, open("listStr.json","w"), ensure_ascii=False)
 
-dictStr = {"city": "北京", "name": "范爷"}
+dictStr = {"city": "上海", "name": "施想"}
 json.dump(dictStr, open("dictStr.json","w"), ensure_ascii=False)
 ```
 #### 3.4 json.load()
