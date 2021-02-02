@@ -4,14 +4,12 @@ from jsonpath import jsonpath
 
 url = "https://www.lagou.com/lbs/getAllCitySearchLabels.json"
 
-headers = {"User-Agent":UserAgent().chrome}
-resp = requests.get(url,headers=headers)
+headers = {"User-Agent": UserAgent().chrome}
+resp = requests.get(url, headers=headers)
 
 
-ids = jsonpath(resp.json(),"$..id")
-names = jsonpath(resp.json(),"$..name")
+ids = jsonpath(resp.json(), "$..id")
+names = jsonpath(resp.json(), "$..name")
 
-for id, name in zip(ids,names):
-    print(id,":",name)
-
-
+for id, name in zip(ids, names):
+    print(id, ":", name)
