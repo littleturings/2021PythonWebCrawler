@@ -1,48 +1,54 @@
 ### 1. Selenium
 
-Selenium是一个Web的自动化测试工具，最初是为网站自动化测试而开发的，类型像我们玩游戏用的按键精灵，可以按指定的命令自动操作，不同是Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器（包括PhantomJS这些无界面的浏览器）。
+Selenium 是一个 Web 的自动化测试工具，最初是为网站自动化测试而开发的，类型像我们玩游戏用的按键精灵，可以按指定的命令自动操作，不同是 Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器（包括 PhantomJS 这些无界面的浏览器）。
 
 Selenium 可以根据我们的指令，让浏览器自动加载页面，获取需要的数据，甚至页面截屏，或者判断网站上某些动作是否发生。
 
 Selenium 自己不带浏览器，不支持浏览器的功能，它需要与第三方浏览器结合在一起才能使用。但是我们有时候需要让它内嵌在代码中运行，所以我们可以用一个叫 PhantomJS 的工具代替真实的浏览器。
 
-PyPI网站下载 Selenium库 https://pypi.python.org/simple/selenium ，也可以用 第三方管理器 
+[PyPI 网站下载 Selenium 库](https://pypi.python.org/simple/selenium)，也可以用 第三方管理器
 
-pip用命令安装：`pip install selenium`
+pip 用命令安装：
 
-Selenium 官方参考文档：http://selenium-python.readthedocs.io/index.html
+```sh
+pip install selenium
+```
+
+[Selenium 官方参考文档](http://selenium-python.readthedocs.io/index.html)
 
 ### 2. PhantomJS
-PhantomJS 是一个基于Webkit的“无界面”(headless)浏览器，它会把网站加载到内存并执行页面上的 JavaScript，因为不会展示图形界面，所以运行起来比完整的浏览器要高效
+
+PhantomJS 是一个基于 Webkit 的“无界面”(headless)浏览器，它会把网站加载到内存并执行页面上的 JavaScript，因为不会展示图形界面，所以运行起来比完整的浏览器要高效
 
 如果我们把 Selenium 和 PhantomJS 结合在一起，就可以运行一个非常强大的网络爬虫了，这个爬虫可以处理 JavaScrip、Cookie、headers，以及任何我们真实用户需要做的事情
 
+#### 2.1 注意：PhantomJS（python2）
 
-#### 2.1注意：PhantomJS（python2）
+只能从它的[官方网站下载](http://phantomjs.org/download.html)。 因为 PhantomJS 是一个功能完善(虽然无界面)的浏览器而非一个 Python 库，所以它不需要像 Python 的其他库一样安装，但我们可以通过 Selenium 调用 PhantomJS 来直接使用。
 
-只能从它的官方网站http://phantomjs.org/download.html) 下载。 因为 PhantomJS 是一个功能完善(虽然无界面)的浏览器而非一个 Python 库，所以它不需要像 Python 的其他库一样安装，但我们可以通过Selenium调用PhantomJS来直接使用。
+[PhantomJS 官方参考文档](http://phantomjs.org/documentation)
 
-PhantomJS 官方参考文档：http://phantomjs.org/documentation
+#### 2.2 python3 使用的浏览器
 
-#### 2.2 python3使用的浏览器
-随着Python3的普及，Selenium3也跟上了行程。而Selenium3最大的变化是去掉了Selenium RC，另外就是Webdriver从各自浏览器中脱离，必须单独下载
+随着 Python3 的普及，Selenium3 也跟上了行程。而 Selenium3 最大的变化是去掉了 Selenium RC，另外就是 Webdriver 从各自浏览器中脱离，必须单独下载
 
+##### 2.1.1 安装 Firefox geckodriver
 
-##### 2.1.1 安装Firefox geckodriver
-安装firefox最新版本，添加Firefox可执行程序到系统环境变量。记得关闭firefox的自动更新
+安装 firefox 最新版本，添加 Firefox 可执行程序到系统环境变量。记得关闭 firefox 的自动更新
 
-firefox下载地下：https://github.com/mozilla/geckodriver/releases
+[firefox 下载地址](https://github.com/mozilla/geckodriver/releases)
 
-将下载的geckodriver.exe 放到path路径下 D:\Python\Python36\
+将下载的`geckodriver.exe` 放到 path 路径下`D:\Python\Python36\`
 
-##### 2.1.2 安装ChromeDriver
-http://chromedriver.storage.googleapis.com/index.html
+##### 2.1.2 安装 ChromeDriver
+
+[ChromeDriver](http://chromedriver.storage.googleapis.com/index.html)
+
 > 注意版本号要对应
-
 > 下载下来的文件解压到`Python36\Scripts`
+> chrome59 版本以后可以变成无头的浏览器，加以下参数
 
-> chrome59版本以后可以变成无头的浏览器，加以下参数
-```
+```python
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 chrome = webdriver.Chrome(chrome_options=options)
@@ -50,7 +56,8 @@ chrome.get("http://ww.baidu.com")
 ```
 
 > 代理模式
-```
+
+```python
 from selenium import webdriver
 option = webdriver.ChromeOptions()
 option.add_argument("--proxy-server=http://61.138.33.20:808")
@@ -59,14 +66,15 @@ chrome.get('http://httpbin.org/get')
 info = chrome.page_source
 
 print(info)
-
 ```
+
 ### 3. 使用方式
+
 Selenium 库里有个叫 WebDriver 的 API。WebDriver 有点儿像可以加载网站的浏览器，但是它也可以像 BeautifulSoup 或者其他 Selector 对象一样用来查找页面元素，与页面上的元素进行交互 (发送文本、点击等)，以及执行其他动作来运行网络爬虫
 
 #### 3.1 简单例子
 
-```
+```python
 # 导入 webdriver
 from selenium import webdriver
 
@@ -94,14 +102,14 @@ print（driver.title）
 # 生成当前页面快照并保存
 driver.save_screenshot("baidu.png")
 
-# id="kw"是百度搜索输入框，输入字符串"长城"
-driver.find_element_by_id("kw").send_keys("孙嘉乐")
+# id="kw"是百度搜索输入框，输入字符串"小小图灵社"
+driver.find_element_by_id("kw").send_keys("小小图灵社")
 
 # id="su"是百度搜索按钮，click() 是模拟点击
 driver.find_element_by_id("su").click()
 
 # 获取新的页面快照
-driver.save_screenshot("孙嘉乐.png")
+driver.save_screenshot("screenshot.png")
 
 # 打印网页渲染后的源代码
 print(driver.page_source)
@@ -138,19 +146,24 @@ driver.quit()
 ```
 
 ### 4 页面操作
-#### 4.1 页面交互
->仅仅抓取页面没有多大卵用，我们真正要做的是做到和页面交互，比如点击，输入等等。那么前提就是要找到页面中的元素。WebDriver提供了各种方法来寻找元素。例如下面有一个表单输入框
-```
-<input type="text" name="passwd" id="passwd-id" />
 
+#### 4.1 页面交互
+
+> 仅仅抓取页面没有多大卵用，我们真正要做的是做到和页面交互，比如点击，输入等等。那么前提就是要找到页面中的元素。WebDriver 提供了各种方法来寻找元素。例如下面有一个表单输入框
+
+```html
+<input type="text" name="passwd" id="passwd-id" />
 ```
+
 ##### 4.1.1 **获取**
-```
+
+```python
 element = driver.find_element_by_id("passwd-id")
 element = driver.find_element_by_name("passwd")
 element = driver.find_elements_by_tag_name("input")
 element = driver.find_element_by_xpath("//input[@id='passwd-id']")
 ```
+
 **注意：**
 
 - 文本必须完全匹配才可以，所以这并不是一个很好的匹配方式
@@ -158,40 +171,53 @@ element = driver.find_element_by_xpath("//input[@id='passwd-id']")
 - 在用 xpath 的时候还需要注意的如果有多个元素匹配了 xpath，它只会返回第一个匹配的元素。如果没有找到，那么会抛出 NoSuchElementException 的异常
 
 ##### 4.1.2 输入内容
-```
+
+```python
 element.send_keys("some text")
 ```
+
 ##### 4.1.3 模拟点击某个按键
-```
+
+```python
 element.send_keys("and some", Keys.ARROW_DOWN)
 ```
+
 ##### 4.1.4 清空文本
-```
+
+```python
 element.clear()
 ```
 
 ##### 4.1.5 元素拖拽
+
 > 要完成元素的拖拽，首先你需要指定被拖动的元素和拖动目标元素，然后利用 ActionChains 类来实现
 
 以下实现元素从 source 拖动到 target 的操作
-```
+
+```python
 element = driver.find_element_by_name("source")
 target = driver.find_element_by_name("target")
- 
+
 from selenium.webdriver import ActionChains
 action_chains = ActionChains(driver)
 action_chains.drag_and_drop(element, target).perform()
 ```
+
 ##### 4.1.6 历史记录
+
 > 操作页面的前进和后退功能
-```
+
+```python
 driver.forward()
 driver.back()
 ```
 
 ### 5 API
+
 #### 5.1 元素选取
+
 ##### 5.1.1 单个元素选取
+
 - find_element_by_id
 - find_element_by_name
 - find_element_by_xpath
@@ -202,6 +228,7 @@ driver.back()
 - find_element_by_css_selector
 
 ##### 5.1.2 多个元素选取
+
 - find_elements_by_name
 - find_elements_by_xpath
 - find_elements_by_link_text
@@ -211,13 +238,16 @@ driver.back()
 - find_elements_by_css_selector
 
 ##### 5.1.3 利用 By 类来确定哪种选择方式
-```
+
+```python
 from selenium.webdriver.common.by import By
- 
+
 driver.find_element(By.XPATH, '//button[text()="Some text"]')
 driver.find_elements(By.XPATH, '//button')
 ```
+
 By 类的一些属性如下
+
 - ID = "id"
 - XPATH = "xpath"
 - LINK_TEXT = "link text"
@@ -228,10 +258,12 @@ By 类的一些属性如下
 - CSS_SELECTOR = "css selector"
 
 ### 6 等待
+
 #### 6.1 隐式等待
+
 > 到了一定的时间发现元素还没有加载，则继续等待我们指定的时间，如果超过了我们指定的时间还没有加载就会抛出异常，如果没有需要等待的时候就已经加载完毕就会立即执行
 
-```
+```python
 from selenium import webdriver
 url = 'https://www.guazi.com/nj/buy/'
 driver = webdriver.Chrome()
@@ -242,23 +274,27 @@ print(driver.page_source)
 ```
 
 #### 6.2 显示等待
+
 > 指定一个等待条件，并且指定一个最长等待时间，会在这个时间内进行判断是否满足等待条件，如果成立就会立即返回，如果不成立，就会一直等待，直到等待你指定的最长等待时间，如果还是不满足，就会抛出异常，如果满足了就会正常返回
-```
-    url = 'https://www.guazi.com/nj/buy/'
-    driver = webdriver.Chrome()
-    driver.get(url)
-    wait = WebDriverWait(driver,10)
-    wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'next')))
-    print(driver.page_source)
+
+```python
+url = 'https://www.guazi.com/nj/buy/'
+driver = webdriver.Chrome()
+driver.get(url)
+wait = WebDriverWait(driver,10)
+wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'next')))
+print(driver.page_source)
 ```
 
-- presence_of_element_located   
-    - 元素加载出，传入定位元组，如(By.ID, 'p')
-- presence_of_all_elements_located 
-    - 所有元素加载出
+- presence_of_element_located
+  - 元素加载出，传入定位元组，如(By.ID, 'p')
+- presence_of_all_elements_located
+  - 所有元素加载出
 - element_to_be_clickable
-    - 元素可点击
+  - 元素可点击
 - element_located_to_be_selected
-    - 元素可选择，传入定位元组 
+  - 元素可选择，传入定位元组
+
 #### 6.3 强制等待
-> 使用 time.sleep
+
+> 使用 `time.sleep`

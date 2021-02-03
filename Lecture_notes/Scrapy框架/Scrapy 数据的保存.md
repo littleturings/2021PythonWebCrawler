@@ -1,6 +1,8 @@
 ### 1. 数据的提取
+
 #### 1.1 控制台打印
-```
+
+```python
 import scrapy
 
 
@@ -19,9 +21,13 @@ class DoubanSpider(scrapy.Spider):
             'movie_core':movie_core
         }
 ```
-执行以上代码，我可以在控制看到：
-```
 
+执行以上代码，我可以在控制看到：
+
+<details>
+<summary>输出</summary>
+
+<code>
 2018-01-24 15:17:14 [scrapy.utils.log] INFO: Scrapy 1.5.0 started (bot: spiderdemo1)
 2018-01-24 15:17:14 [scrapy.utils.log] INFO: Versions: lxml 4.1.1.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.3.1, w3lib 1.18.0, Twiste
 d 17.9.0, Python 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 18:11:49) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 17.5.0 (OpenSSL 1.1.0g  2 Nov 201
@@ -87,35 +93,40 @@ d 17.9.0, Python 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 18:11:49) [MSC v.1900 64 bi
  'scheduler/enqueued/memory': 2,
  'start_time': datetime.datetime(2018, 1, 24, 7, 17, 14, 784782)}
 2018-01-24 15:17:15 [scrapy.core.engine] INFO: Spider closed (finished)
-
-```
+</code>
+</details>
 
 #### 1.2 以文件的方式输出
-##### 1.2.1 python原生方式
-```
+
+##### 1.2.1 python 原生方式
+
+```python
 with open("movie.txt", 'wb') as f:
     for n, c in zip(movie_name, movie_core):
         str = n+":"+c+"\n"
         f.write(str.encode())
 ```
 
-##### 1.2.2 以scrapy内置方式
+##### 1.2.2 以 scrapy 内置方式
+
 scrapy 内置主要有四种：JSON，JSON lines，CSV，XML
 
-我们将结果用最常用的JSON导出，命令如下：
+我们将结果用最常用的 JSON 导出，命令如下：
+
+```sh
+scrapy crawl dmoz -o douban.json -t json
 ```
-scrapy crawl dmoz -o douban.json -t json  
-```
+
 -o 后面是导出文件名，-t 后面是导出类型
 
-#### 2 提取内容的封装Item
-> Scrapy进程可通过使用蜘蛛提取来自网页中的数据。Scrapy使用Item类生成输出对象用于收刮数据
+#### 2 提取内容的封装 Item
 
-> Item 对象是自定义的python字典，可以使用标准字典语法获取某个属性的值
+> Scrapy 进程可通过使用蜘蛛提取来自网页中的数据。Scrapy 使用 Item 类生成输出对象用于收刮数据
+> Item 对象是自定义的 python 字典，可以使用标准字典语法获取某个属性的值
 
 ##### 2.1 定义
 
-```
+```python
 import scrapy
 
 
@@ -126,15 +137,15 @@ class InfoItem(scrapy.Item):
 ```
 
 ##### 2.2 使用
-```
+
+```python
 def parse(self, response):
     movie_name = response.xpath("//div[@class='item']//a/span[1]/text()").extract()
     movie_core = response.xpath("//div[@class='star']/span[2]/text()").extract()
-    
+
     for n, c in zip(movie_name, movie_core):
         movie = InfoItem()
         movie['movie_name'] = n
         movie['movie_core'] = c
         yield movie
 ```
-
