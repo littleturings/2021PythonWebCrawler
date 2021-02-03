@@ -95,13 +95,13 @@ print（driver.title）
 driver.save_screenshot("baidu.png")
 
 # id="kw"是百度搜索输入框，输入字符串"长城"
-driver.find_element_by_id("kw").send_keys("尚学堂")
+driver.find_element_by_id("kw").send_keys("孙嘉乐")
 
 # id="su"是百度搜索按钮，click() 是模拟点击
 driver.find_element_by_id("su").click()
 
 # 获取新的页面快照
-driver.save_screenshot("尚学.png")
+driver.save_screenshot("孙嘉乐.png")
 
 # 打印网页渲染后的源代码
 print(driver.page_source)
