@@ -50,11 +50,11 @@ jobs:
         run: |
           yarn
 
-      - name: Build hexo pages
+      - name: Build pages
         run: |
           yarn run docs
 
-      - name: replace new page
+      - name: Replace new pages
         run: |
           rm -rf .deploy_git/*
           cp -r _Lecture_notes/* .deploy_git/
