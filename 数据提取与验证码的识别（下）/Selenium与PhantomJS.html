@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>Scrapy框架高级与动态页面的爬取</span></li>
+<ul>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - CrawlSpider.html">Scrapy 框架   CrawlSpider</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 下载中间件Middleware.html">Scrapy 框架   下载中间件Middleware</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 图片管道使用.html">Scrapy 框架   图片管道使用</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 模拟登录——Request、Response.html">Scrapy 框架   模拟登录——Request、Response</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 爬取JS生成的动态页面.html">Scrapy 框架   爬取JS生成的动态页面</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Splash 的使用.html">Splash 的使用</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（上）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（上）/Beautiful Soup.html">Beautiful Soup</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/JsonPath.html">JsonPath</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/PyQuery.html">PyQuery</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/Re.html">Re</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/XPath.html">XPath</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（下）</span></li>
+<ul>
+<li><a class="" href="Python下Tesseract Ocr引擎及安装介绍.html">Python下Tesseract Ocr引擎及安装介绍</a></li>
+<li><a class="" href="Selenium 处理滚动条.html">Selenium 处理滚动条</a></li>
+<li><a class="active" href="Selenium与PhantomJS.html">Selenium与PhantomJS</a></li>
+<li><a class="" href="爬虫之多线程.html">爬虫之多线程</a></li>
+</ul>
+<li class="heading"><span>类级别的写法与Scrapy框架</span></li>
+<ul>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的保存.html">Scrapy 数据的保存</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的提取.html">Scrapy 数据的提取</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架介绍与安装.html">Scrapy 框架介绍与安装</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架使用.html">Scrapy 框架使用</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="1.-selenium">1. Selenium <a class="heading-anchor-permalink" href="#1.-selenium">#</a></h3>
+<p>Selenium 是一个 Web 的自动化测试工具，最初是为网站自动化测试而开发的，类型像我们玩游戏用的按键精灵，可以按指定的命令自动操作，不同是 Selenium 可以直接运行在浏览器上，它支持所有主流的浏览器（包括 PhantomJS 这些无界面的浏览器）。</p>
+<p>Selenium 可以根据我们的指令，让浏览器自动加载页面，获取需要的数据，甚至页面截屏，或者判断网站上某些动作是否发生。</p>
+<p>Selenium 自己不带浏览器，不支持浏览器的功能，它需要与第三方浏览器结合在一起才能使用。但是我们有时候需要让它内嵌在代码中运行，所以我们可以用一个叫 PhantomJS 的工具代替真实的浏览器。</p>
+<p><a href="https://pypi.python.org/simple/selenium">PyPI 网站下载 Selenium 库</a>，也可以用 第三方管理器</p>
+<p>pip 用命令安装：</p>
+<pre><code class="language-sh">pip install selenium
+</code></pre>
+<p><a href="http://selenium-python.readthedocs.io/index.html">Selenium 官方参考文档</a></p>
+<h3 id="2.-phantomjs">2. PhantomJS <a class="heading-anchor-permalink" href="#2.-phantomjs">#</a></h3>
+<p>PhantomJS 是一个基于 Webkit 的“无界面”(headless)浏览器，它会把网站加载到内存并执行页面上的 JavaScript，因为不会展示图形界面，所以运行起来比完整的浏览器要高效</p>
+<p>如果我们把 Selenium 和 PhantomJS 结合在一起，就可以运行一个非常强大的网络爬虫了，这个爬虫可以处理 JavaScrip、Cookie、headers，以及任何我们真实用户需要做的事情</p>
+<h4 id="2.1-%E6%B3%A8%E6%84%8F%EF%BC%9Aphantomjs%EF%BC%88python2%EF%BC%89">2.1 注意：PhantomJS（python2） <a class="heading-anchor-permalink" href="#2.1-%E6%B3%A8%E6%84%8F%EF%BC%9Aphantomjs%EF%BC%88python2%EF%BC%89">#</a></h4>
+<p>只能从它的<a href="http://phantomjs.org/download.html">官方网站下载</a>。 因为 PhantomJS 是一个功能完善(虽然无界面)的浏览器而非一个 Python 库，所以它不需要像 Python 的其他库一样安装，但我们可以通过 Selenium 调用 PhantomJS 来直接使用。</p>
+<p><a href="http://phantomjs.org/documentation">PhantomJS 官方参考文档</a></p>
+<h4 id="2.2-python3-%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8">2.2 python3 使用的浏览器 <a class="heading-anchor-permalink" href="#2.2-python3-%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8">#</a></h4>
+<p>随着 Python3 的普及，Selenium3 也跟上了行程。而 Selenium3 最大的变化是去掉了 Selenium RC，另外就是 Webdriver 从各自浏览器中脱离，必须单独下载</p>
+<h5 id="2.1.1-%E5%AE%89%E8%A3%85-firefox-geckodriver">2.1.1 安装 Firefox geckodriver <a class="heading-anchor-permalink" href="#2.1.1-%E5%AE%89%E8%A3%85-firefox-geckodriver">#</a></h5>
+<p>安装 firefox 最新版本，添加 Firefox 可执行程序到系统环境变量。记得关闭 firefox 的自动更新</p>
+<p><a href="https://github.com/mozilla/geckodriver/releases">firefox 下载地址</a></p>
+<p>将下载的<code>geckodriver.exe</code> 放到 path 路径下<code>D:\Python\Python36\</code></p>
+<h5 id="2.1.2-%E5%AE%89%E8%A3%85-chromedriver">2.1.2 安装 ChromeDriver <a class="heading-anchor-permalink" href="#2.1.2-%E5%AE%89%E8%A3%85-chromedriver">#</a></h5>
+<p><a href="http://chromedriver.storage.googleapis.com/index.html">ChromeDriver</a></p>
+<blockquote>
+<p>注意版本号要对应
+下载下来的文件解压到<code>Python36\Scripts</code>
+chrome59 版本以后可以变成无头的浏览器，加以下参数</p>
+</blockquote>
+<pre><code class="language-python">options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+chrome = webdriver.Chrome(chrome_options=options)
+chrome.get(&quot;http://ww.baidu.com&quot;)
+</code></pre>
+<blockquote>
+<p>代理模式</p>
+</blockquote>
+<pre><code class="language-python">from selenium import webdriver
+option = webdriver.ChromeOptions()
+option.add_argument(&quot;--proxy-server=http://61.138.33.20:808&quot;)
+chrome = webdriver.Chrome(chrome_options=option)
+chrome.get('http://httpbin.org/get')
+info = chrome.page_source
+
+print(info)
+</code></pre>
+<h3 id="3.-%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F">3. 使用方式 <a class="heading-anchor-permalink" href="#3.-%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F">#</a></h3>
+<p>Selenium 库里有个叫 WebDriver 的 API。WebDriver 有点儿像可以加载网站的浏览器，但是它也可以像 BeautifulSoup 或者其他 Selector 对象一样用来查找页面元素，与页面上的元素进行交互 (发送文本、点击等)，以及执行其他动作来运行网络爬虫</p>
+<h4 id="3.1-%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90">3.1 简单例子 <a class="heading-anchor-permalink" href="#3.1-%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90">#</a></h4>
+<pre><code class="language-python"># 导入 webdriver
+from selenium import webdriver
+
+# 要想调用键盘按键操作需要引入keys包
+from selenium.webdriver.common.keys import Keys
+
+# 调用环境变量指定的PhantomJS浏览器创建浏览器对象
+driver = webdriver.PhantomJS()
+
+# 如果没有在环境变量指定PhantomJS位置
+# driver = webdriver.PhantomJS(executable_path=&quot;./phantomjs&quot;))
+
+# get方法会一直等到页面被完全加载，然后才会继续程序，通常测试会在这里选择 time.sleep(2)
+driver.get(&quot;http://www.baidu.com/&quot;)
+
+# 获取页面名为 wrapper的id标签的文本内容
+data = driver.find_element_by_id(&quot;wrapper&quot;).text
+
+# 打印数据内容
+print(data)
+
+# 打印页面标题 &quot;百度一下，你就知道&quot;
+print（driver.title）
+
+# 生成当前页面快照并保存
+driver.save_screenshot(&quot;baidu.png&quot;)
+
+# id=&quot;kw&quot;是百度搜索输入框，输入字符串&quot;小小图灵社&quot;
+driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;小小图灵社&quot;)
+
+# id=&quot;su&quot;是百度搜索按钮，click() 是模拟点击
+driver.find_element_by_id(&quot;su&quot;).click()
+
+# 获取新的页面快照
+driver.save_screenshot(&quot;screenshot.png&quot;)
+
+# 打印网页渲染后的源代码
+print(driver.page_source)
+
+# 获取当前页面Cookie
+print(driver.get_cookies())
+
+# ctrl+a 全选输入框内容
+driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,'a')
+
+# ctrl+x 剪切输入框内容
+driver.find_element_by_id(&quot;kw&quot;).send_keys(Keys.CONTROL,'x')
+
+# 输入框重新输入内容
+driver.find_element_by_id(&quot;kw&quot;).send_keys(&quot;python爬虫&quot;)
+
+# 模拟Enter回车键
+driver.find_element_by_id(&quot;su&quot;).send_keys(Keys.RETURN)
+
+# 清除输入框内容
+driver.find_element_by_id(&quot;kw&quot;).clear()
+
+# 生成新的页面快照
+driver.save_screenshot(&quot;python爬虫.png&quot;)
+
+# 获取当前url
+print(driver.current_url)
+
+# 关闭当前页面，如果只有一个页面，会关闭浏览器
+# driver.close()
+
+# 关闭浏览器
+driver.quit()
+</code></pre>
+<h3 id="4-%E9%A1%B5%E9%9D%A2%E6%93%8D%E4%BD%9C">4 页面操作 <a class="heading-anchor-permalink" href="#4-%E9%A1%B5%E9%9D%A2%E6%93%8D%E4%BD%9C">#</a></h3>
+<h4 id="4.1-%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">4.1 页面交互 <a class="heading-anchor-permalink" href="#4.1-%E9%A1%B5%E9%9D%A2%E4%BA%A4%E4%BA%92">#</a></h4>
+<blockquote>
+<p>仅仅抓取页面没有多大卵用，我们真正要做的是做到和页面交互，比如点击，输入等等。那么前提就是要找到页面中的元素。WebDriver 提供了各种方法来寻找元素。例如下面有一个表单输入框</p>
+</blockquote>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;passwd&quot; id=&quot;passwd-id&quot; /&gt;
+</code></pre>
+<h5 id="4.1.1-%E8%8E%B7%E5%8F%96">4.1.1 <strong>获取</strong> <a class="heading-anchor-permalink" href="#4.1.1-%E8%8E%B7%E5%8F%96">#</a></h5>
+<pre><code class="language-python">element = driver.find_element_by_id(&quot;passwd-id&quot;)
+element = driver.find_element_by_name(&quot;passwd&quot;)
+element = driver.find_elements_by_tag_name(&quot;input&quot;)
+element = driver.find_element_by_xpath(&quot;//input[@id='passwd-id']&quot;)
+</code></pre>
+<p><strong>注意：</strong></p>
+<ul>
+<li>
+<p>文本必须完全匹配才可以，所以这并不是一个很好的匹配方式</p>
+</li>
+<li>
+<p>在用 xpath 的时候还需要注意的如果有多个元素匹配了 xpath，它只会返回第一个匹配的元素。如果没有找到，那么会抛出 NoSuchElementException 的异常</p>
+</li>
+</ul>
+<h5 id="4.1.2-%E8%BE%93%E5%85%A5%E5%86%85%E5%AE%B9">4.1.2 输入内容 <a class="heading-anchor-permalink" href="#4.1.2-%E8%BE%93%E5%85%A5%E5%86%85%E5%AE%B9">#</a></h5>
+<pre><code class="language-python">element.send_keys(&quot;some text&quot;)
+</code></pre>
+<h5 id="4.1.3-%E6%A8%A1%E6%8B%9F%E7%82%B9%E5%87%BB%E6%9F%90%E4%B8%AA%E6%8C%89%E9%94%AE">4.1.3 模拟点击某个按键 <a class="heading-anchor-permalink" href="#4.1.3-%E6%A8%A1%E6%8B%9F%E7%82%B9%E5%87%BB%E6%9F%90%E4%B8%AA%E6%8C%89%E9%94%AE">#</a></h5>
+<pre><code class="language-python">element.send_keys(&quot;and some&quot;, Keys.ARROW_DOWN)
+</code></pre>
+<h5 id="4.1.4-%E6%B8%85%E7%A9%BA%E6%96%87%E6%9C%AC">4.1.4 清空文本 <a class="heading-anchor-permalink" href="#4.1.4-%E6%B8%85%E7%A9%BA%E6%96%87%E6%9C%AC">#</a></h5>
+<pre><code class="language-python">element.clear()
+</code></pre>
+<h5 id="4.1.5-%E5%85%83%E7%B4%A0%E6%8B%96%E6%8B%BD">4.1.5 元素拖拽 <a class="heading-anchor-permalink" href="#4.1.5-%E5%85%83%E7%B4%A0%E6%8B%96%E6%8B%BD">#</a></h5>
+<blockquote>
+<p>要完成元素的拖拽，首先你需要指定被拖动的元素和拖动目标元素，然后利用 ActionChains 类来实现</p>
+</blockquote>
+<p>以下实现元素从 source 拖动到 target 的操作</p>
+<pre><code class="language-python">element = driver.find_element_by_name(&quot;source&quot;)
+target = driver.find_element_by_name(&quot;target&quot;)
+
+from selenium.webdriver import ActionChains
+action_chains = ActionChains(driver)
+action_chains.drag_and_drop(element, target).perform()
+</code></pre>
+<h5 id="4.1.6-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">4.1.6 历史记录 <a class="heading-anchor-permalink" href="#4.1.6-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95">#</a></h5>
+<blockquote>
+<p>操作页面的前进和后退功能</p>
+</blockquote>
+<pre><code class="language-python">driver.forward()
+driver.back()
+</code></pre>
+<h3 id="5-api">5 API <a class="heading-anchor-permalink" href="#5-api">#</a></h3>
+<h4 id="5.1-%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">5.1 元素选取 <a class="heading-anchor-permalink" href="#5.1-%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">#</a></h4>
+<h5 id="5.1.1-%E5%8D%95%E4%B8%AA%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">5.1.1 单个元素选取 <a class="heading-anchor-permalink" href="#5.1.1-%E5%8D%95%E4%B8%AA%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">#</a></h5>
+<ul>
+<li>find_element_by_id</li>
+<li>find_element_by_name</li>
+<li>find_element_by_xpath</li>
+<li>find_element_by_link_text</li>
+<li>find_element_by_partial_link_text</li>
+<li>find_element_by_tag_name</li>
+<li>find_element_by_class_name</li>
+<li>find_element_by_css_selector</li>
+</ul>
+<h5 id="5.1.2-%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">5.1.2 多个元素选取 <a class="heading-anchor-permalink" href="#5.1.2-%E5%A4%9A%E4%B8%AA%E5%85%83%E7%B4%A0%E9%80%89%E5%8F%96">#</a></h5>
+<ul>
+<li>find_elements_by_name</li>
+<li>find_elements_by_xpath</li>
+<li>find_elements_by_link_text</li>
+<li>find_elements_by_partial_link_text</li>
+<li>find_elements_by_tag_name</li>
+<li>find_elements_by_class_name</li>
+<li>find_elements_by_css_selector</li>
+</ul>
+<h5 id="5.1.3-%E5%88%A9%E7%94%A8-by-%E7%B1%BB%E6%9D%A5%E7%A1%AE%E5%AE%9A%E5%93%AA%E7%A7%8D%E9%80%89%E6%8B%A9%E6%96%B9%E5%BC%8F">5.1.3 利用 By 类来确定哪种选择方式 <a class="heading-anchor-permalink" href="#5.1.3-%E5%88%A9%E7%94%A8-by-%E7%B1%BB%E6%9D%A5%E7%A1%AE%E5%AE%9A%E5%93%AA%E7%A7%8D%E9%80%89%E6%8B%A9%E6%96%B9%E5%BC%8F">#</a></h5>
+<pre><code class="language-python">from selenium.webdriver.common.by import By
+
+driver.find_element(By.XPATH, '//button[text()=&quot;Some text&quot;]')
+driver.find_elements(By.XPATH, '//button')
+</code></pre>
+<p>By 类的一些属性如下</p>
+<ul>
+<li>ID = “id”</li>
+<li>XPATH = “xpath”</li>
+<li>LINK_TEXT = “link text”</li>
+<li>PARTIAL_LINK_TEXT = “partial link text”</li>
+<li>NAME = “name”</li>
+<li>TAG_NAME = “tag name”</li>
+<li>CLASS_NAME = “class name”</li>
+<li>CSS_SELECTOR = “css selector”</li>
+</ul>
+<h3 id="6-%E7%AD%89%E5%BE%85">6 等待 <a class="heading-anchor-permalink" href="#6-%E7%AD%89%E5%BE%85">#</a></h3>
+<h4 id="6.1-%E9%9A%90%E5%BC%8F%E7%AD%89%E5%BE%85">6.1 隐式等待 <a class="heading-anchor-permalink" href="#6.1-%E9%9A%90%E5%BC%8F%E7%AD%89%E5%BE%85">#</a></h4>
+<blockquote>
+<p>到了一定的时间发现元素还没有加载，则继续等待我们指定的时间，如果超过了我们指定的时间还没有加载就会抛出异常，如果没有需要等待的时候就已经加载完毕就会立即执行</p>
+</blockquote>
+<pre><code class="language-python">from selenium import webdriver
+url = 'https://www.guazi.com/nj/buy/'
+driver = webdriver.Chrome()
+driver.get(url)
+driver.implicitly_wait(100)
+print(driver.find_element_by_class_name('next'))
+print(driver.page_source)
+</code></pre>
+<h4 id="6.2-%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85">6.2 显示等待 <a class="heading-anchor-permalink" href="#6.2-%E6%98%BE%E7%A4%BA%E7%AD%89%E5%BE%85">#</a></h4>
+<blockquote>
+<p>指定一个等待条件，并且指定一个最长等待时间，会在这个时间内进行判断是否满足等待条件，如果成立就会立即返回，如果不成立，就会一直等待，直到等待你指定的最长等待时间，如果还是不满足，就会抛出异常，如果满足了就会正常返回</p>
+</blockquote>
+<pre><code class="language-python">url = 'https://www.guazi.com/nj/buy/'
+driver = webdriver.Chrome()
+driver.get(url)
+wait = WebDriverWait(driver,10)
+wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'next')))
+print(driver.page_source)
+</code></pre>
+<ul>
+<li>presence_of_element_located
+<ul>
+<li>元素加载出，传入定位元组，如(<a href="http://By.ID">By.ID</a>, ‘p’)</li>
+</ul>
+</li>
+<li>presence_of_all_elements_located
+<ul>
+<li>所有元素加载出</li>
+</ul>
+</li>
+<li>element_to_be_clickable
+<ul>
+<li>元素可点击</li>
+</ul>
+</li>
+<li>element_located_to_be_selected
+<ul>
+<li>元素可选择，传入定位元组</li>
+</ul>
+</li>
+</ul>
+<h4 id="6.3-%E5%BC%BA%E5%88%B6%E7%AD%89%E5%BE%85">6.3 强制等待 <a class="heading-anchor-permalink" href="#6.3-%E5%BC%BA%E5%88%B6%E7%AD%89%E5%BE%85">#</a></h4>
+<blockquote>
+<p>使用 <code>time.sleep</code></p>
+</blockquote>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

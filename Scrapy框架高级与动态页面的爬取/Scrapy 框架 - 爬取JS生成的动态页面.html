@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>Scrapy框架高级与动态页面的爬取</span></li>
+<ul>
+<li><a class="" href="Scrapy 框架 - CrawlSpider.html">Scrapy 框架   CrawlSpider</a></li>
+<li><a class="" href="Scrapy 框架 - 下载中间件Middleware.html">Scrapy 框架   下载中间件Middleware</a></li>
+<li><a class="" href="Scrapy 框架 - 图片管道使用.html">Scrapy 框架   图片管道使用</a></li>
+<li><a class="" href="Scrapy 框架 - 模拟登录——Request、Response.html">Scrapy 框架   模拟登录——Request、Response</a></li>
+<li><a class="active" href="Scrapy 框架 - 爬取JS生成的动态页面.html">Scrapy 框架   爬取JS生成的动态页面</a></li>
+<li><a class="" href="Splash 的使用.html">Splash 的使用</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（上）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（上）/Beautiful Soup.html">Beautiful Soup</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/JsonPath.html">JsonPath</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/PyQuery.html">PyQuery</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/Re.html">Re</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/XPath.html">XPath</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（下）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（下）/Python下Tesseract Ocr引擎及安装介绍.html">Python下Tesseract Ocr引擎及安装介绍</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium 处理滚动条.html">Selenium 处理滚动条</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium与PhantomJS.html">Selenium与PhantomJS</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/爬虫之多线程.html">爬虫之多线程</a></li>
+</ul>
+<li class="heading"><span>类级别的写法与Scrapy框架</span></li>
+<ul>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的保存.html">Scrapy 数据的保存</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的提取.html">Scrapy 数据的提取</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架介绍与安装.html">Scrapy 框架介绍与安装</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架使用.html">Scrapy 框架使用</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="%E9%97%AE%E9%A2%98">问题 <a class="heading-anchor-permalink" href="#%E9%97%AE%E9%A2%98">#</a></h3>
+<p>有的页面的很多部分都是用 JS 生成的，而对于用 scrapy 爬虫来说就是一个很大的问题，因为 scrapy 没有 JS engine，所以爬取的都是静态页面，对于 JS 生成的动态页面都无法获得</p>
+<p><a href="http://splash.readthedocs.io/en/stable/">官网</a></p>
+<h3 id="%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案 <a class="heading-anchor-permalink" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">#</a></h3>
+<ul>
+<li>利用第三方中间件来提供 JS 渲染服务： <code>scrapy-splash</code> 等</li>
+<li>利用 <code>webkit</code> 或者基于 <code>webkit</code> 库</li>
+</ul>
+<blockquote>
+<p>Splash 是一个 Javascript 渲染服务。它是一个实现了 HTTP API 的轻量级浏览器，Splash 是用 Python 实现的，同时使用 <code>Twisted</code> 和 <code>QT</code>。<code>Twisted</code> 和 <code>QT</code> 用来让服务具有异步处理能力，以发挥 <code>webkit</code> 的并发能力</p>
+</blockquote>
+<h3 id="%E5%AE%89%E8%A3%85">安装 <a class="heading-anchor-permalink" href="#%E5%AE%89%E8%A3%85">#</a></h3>
+<ol>
+<li>
+<p>pip 安装 <code>scrapy-splash</code> 库</p>
+<pre><code class="language-sh">pip install scrapy-splash
+</code></pre>
+</li>
+<li>
+<p><code>scrapy-splash</code> 使用的是 Splash HTTP API， 所以需要一个 <code>splash instance</code> ，一般采用 <code>docker</code> 运行 splash，所以需要安装 <code>docker</code></p>
+</li>
+<li>
+<p>安装并运行 <code>docker</code></p>
+</li>
+<li>
+<p>拉取镜像</p>
+<pre><code class="language-sh">docker pull scrapinghub/splash
+</code></pre>
+</li>
+<li>
+<p>用 <code>docker</code> 运行 <code>scrapinghub/splash</code></p>
+<pre><code class="language-sh">docker run -p 8050:8050 scrapinghub/splash
+</code></pre>
+</li>
+<li>
+<p>配置 splash 服务（以下操作全部在 <a href="http://settings.py">settings.py</a>）:</p>
+<ol>
+<li>
+<p>使用 splash 解析，要在配置文件中设置 splash 服务器地址：</p>
+<pre><code class="language-python">SPLASH_URL = 'http://localhost:8050/'
+</code></pre>
+</li>
+<li>
+<p>将 splash middleware 添加到 <code>DOWNLOADER_MIDDLEWARE</code> 中</p>
+<pre><code class="language-python">DOWNLOADER_MIDDLEWARES = {
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+</code></pre>
+</li>
+<li>
+<p>Enable <code>SplashDeduplicateArgsMiddleware</code></p>
+<pre><code class="language-python">SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100
+}
+</code></pre>
+<p>这个中间件需要支持 <code>cache_args</code> 功能; 它允许通过不在磁盘请求队列中多次存储重复的 Splash 参数来节省磁盘空间。如果使用 Splash 2.1+，则中间件也可以通过不将这些重复的参数多次发送到 Splash 服务器来节省网络流量</p>
+</li>
+<li>
+<p>配置消息队列所使用的过滤类</p>
+<pre><code class="language-python">DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+</code></pre>
+</li>
+<li>
+<p>配置消息队列需要使用的类</p>
+<pre><code class="language-python">HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
+</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="%E6%A0%B7%E4%BE%8B">样例 <a class="heading-anchor-permalink" href="#%E6%A0%B7%E4%BE%8B">#</a></h3>
+<pre><code class="language-python">import scrapy
+from scrapy_splash import SplashRequest
+
+
+class DoubanSpider(scrapy.Spider):
+    name = 'douban'
+
+    allowed_domains = ['douban.com']
+
+
+def start_requests(self):
+    yield SplashRequest('https://movie.douban.com/typerank?type_name=剧情&amp;type=11&amp;interval_id=100:90', args={'wait': 0.5})
+
+
+def parse(self, response):
+    print(response.text)
+
+</code></pre>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

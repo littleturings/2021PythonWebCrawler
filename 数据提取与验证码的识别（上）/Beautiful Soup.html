@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>Scrapy框架高级与动态页面的爬取</span></li>
+<ul>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - CrawlSpider.html">Scrapy 框架   CrawlSpider</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 下载中间件Middleware.html">Scrapy 框架   下载中间件Middleware</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 图片管道使用.html">Scrapy 框架   图片管道使用</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 模拟登录——Request、Response.html">Scrapy 框架   模拟登录——Request、Response</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 爬取JS生成的动态页面.html">Scrapy 框架   爬取JS生成的动态页面</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Splash 的使用.html">Splash 的使用</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（上）</span></li>
+<ul>
+<li><a class="active" href="Beautiful Soup.html">Beautiful Soup</a></li>
+<li><a class="" href="JsonPath.html">JsonPath</a></li>
+<li><a class="" href="PyQuery.html">PyQuery</a></li>
+<li><a class="" href="Re.html">Re</a></li>
+<li><a class="" href="XPath.html">XPath</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（下）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（下）/Python下Tesseract Ocr引擎及安装介绍.html">Python下Tesseract Ocr引擎及安装介绍</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium 处理滚动条.html">Selenium 处理滚动条</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium与PhantomJS.html">Selenium与PhantomJS</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/爬虫之多线程.html">爬虫之多线程</a></li>
+</ul>
+<li class="heading"><span>类级别的写法与Scrapy框架</span></li>
+<ul>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的保存.html">Scrapy 数据的保存</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的提取.html">Scrapy 数据的提取</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架介绍与安装.html">Scrapy 框架介绍与安装</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架使用.html">Scrapy 框架使用</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="1.-beautiful-soup-%E7%9A%84%E7%AE%80%E4%BB%8B">1. Beautiful Soup 的简介 <a class="heading-anchor-permalink" href="#1.-beautiful-soup-%E7%9A%84%E7%AE%80%E4%BB%8B">#</a></h3>
+<blockquote>
+<p>Beautiful Soup 提供一些简单的、python 式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。
+Beautiful Soup 自动将输入文档转换为 Unicode 编码，输出文档转换为 utf-8 编码。你不需要考虑编码方式，除非文档没有指定一个编码方式，这时，Beautiful Soup 就不能自动识别编码方式了。然后，你仅仅需要说明一下原始编码方式就可以了。
+Beautiful Soup 已成为和 lxml、html6lib 一样出色的 python 解释器，为用户灵活地提供不同的解析策略或强劲的速度</p>
+</blockquote>
+<p><a href="https://beautifulsoup.readthedocs.io/zh_CN/latest/">官网</a></p>
+<h3 id="2.-beautiful-soup-%E5%AE%89%E8%A3%85">2. Beautiful Soup 安装 <a class="heading-anchor-permalink" href="#2.-beautiful-soup-%E5%AE%89%E8%A3%85">#</a></h3>
+<blockquote>
+<p>Beautiful Soup 3 目前已经停止开发，推荐在现在的项目中使用 Beautiful Soup 4，不过它已经被移植到 BS4 了,也就是说导入时我们需要 import bs4</p>
+</blockquote>
+<pre><code class="language-sh">pip install beautifulsoup4
+</code></pre>
+<blockquote>
+<p>Beautiful Soup 支持 Python 标准库中的 HTML 解析器,还支持一些第三方的解析器，如果我们不安装它，则 Python 会使用 Python 默认的解析器，lxml 解析器更加强大，速度更快，推荐安装</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>解析器</th>
+<th>使用方法</th>
+<th>优势</th>
+<th>劣势</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python 标准库</td>
+<td>BeautifulSoup(markup, “html.parser”)</td>
+<td>1. Python 的内置标准库 2. 执行速度适中 3.文档容错能力强</td>
+<td>Python 2.7.3 or 3.2.2)前 的版本中文档容错能力差</td>
+</tr>
+<tr>
+<td>lxml HTML 解析器</td>
+<td>BeautifulSoup(markup, “lxml”)</td>
+<td>1. 速度快 2.文档容错能力强</td>
+<td>需要安装 C 语言库</td>
+</tr>
+<tr>
+<td>lxml XML 解析器</td>
+<td>BeautifulSoup(markup, [“lxml”, “xml”]) BeautifulSoup(markup, “xml”)</td>
+<td>1. 速度快 2.唯一支持 XML 的解析器 3.需要安装 C 语言库</td>
+<td></td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td>BeautifulSoup(markup, “html5lib”)</td>
+<td>1. 最好的容错性 2.以浏览器的方式解析文档 3.生成 HTML5 格式的文档 4.速度慢</td>
+<td>不依赖外部扩展</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3.-%E5%88%9B%E5%BB%BA-beautiful-soup-%E5%AF%B9%E8%B1%A1">3. 创建 Beautiful Soup 对象 <a class="heading-anchor-permalink" href="#3.-%E5%88%9B%E5%BB%BA-beautiful-soup-%E5%AF%B9%E8%B1%A1">#</a></h3>
+<pre><code class="language-python">from bs4 import BeautifulSoup
+
+bs = BeautifulSoup(html,&quot;lxml&quot;)
+</code></pre>
+<h3 id="4.-%E5%9B%9B%E5%A4%A7%E5%AF%B9%E8%B1%A1%E7%A7%8D%E7%B1%BB">4. 四大对象种类 <a class="heading-anchor-permalink" href="#4.-%E5%9B%9B%E5%A4%A7%E5%AF%B9%E8%B1%A1%E7%A7%8D%E7%B1%BB">#</a></h3>
+<blockquote>
+<p>Beautiful Soup 将复杂 HTML 文档转换成一个复杂的树形结构,每个节点都是 Python 对象,所有对象可以归纳为 4 种:</p>
+</blockquote>
+<ul>
+<li>Tag</li>
+<li>NavigableString</li>
+<li>BeautifulSoup</li>
+<li>Comment</li>
+</ul>
+<h4 id="4.1-tag-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E9%80%9A%E4%BF%97%E7%82%B9%E8%AE%B2%E5%B0%B1%E6%98%AF-html-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%A0%87%E7%AD%BE">4.1 Tag 是什么？通俗点讲就是 HTML 中的一个个标签 <a class="heading-anchor-permalink" href="#4.1-tag-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E9%80%9A%E4%BF%97%E7%82%B9%E8%AE%B2%E5%B0%B1%E6%98%AF-html-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%A0%87%E7%AD%BE">#</a></h4>
+<p>例如：<code>&lt;div&gt;</code> <code>&lt;title&gt;</code></p>
+<p>使用方式：</p>
+<pre><code class="language-html">#以以下代码为例子
+&lt;title&gt;知乎&lt;/title&gt;
+&lt;div class=&quot;info&quot; float=&quot;left&quot;&gt;Welcome to Zhihu&lt;/div&gt;
+&lt;div class=&quot;info&quot; float=&quot;right&quot;&gt;
+  &lt;span&gt;Good Good Study&lt;/span&gt;
+  &lt;a href=&quot;www.zhihu.com&quot;&gt;&lt;/a&gt;
+  &lt;strong&gt;&lt;!--没用--&gt;&lt;/strong&gt;
+&lt;/div&gt;
+</code></pre>
+<h5 id="4.1.1-%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE">4.1.1 获取标签 <a class="heading-anchor-permalink" href="#4.1.1-%E8%8E%B7%E5%8F%96%E6%A0%87%E7%AD%BE">#</a></h5>
+<pre><code class="language-python">#以lxml方式解析
+soup = BeautifulSoup(info, 'lxml')
+print(soup.title)
+# &lt;title&gt;bilibili&lt;/title&gt;
+</code></pre>
+<p><strong>注意</strong></p>
+<blockquote>
+<p>相同的标签只能获取第一个符合要求的标签</p>
+</blockquote>
+<h5 id="4.1.2-%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7">4.1.2 获取属性 <a class="heading-anchor-permalink" href="#4.1.2-%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7">#</a></h5>
+<pre><code class="language-python">#获取所有属性
+print(soup.title.attrs)
+#class='info' float='left'
+
+#获取单个属性的值
+print(soup.div.get('class'))
+print(soup.div['class'])
+print(soup.a['href'])
+#info
+</code></pre>
+<h4 id="4.2-navigablestring-%E8%8E%B7%E5%8F%96%E5%86%85%E5%AE%B9">4.2 NavigableString 获取内容 <a class="heading-anchor-permalink" href="#4.2-navigablestring-%E8%8E%B7%E5%8F%96%E5%86%85%E5%AE%B9">#</a></h4>
+<pre><code class="language-python">print(soup.title.string)
+print(soup.title.text)
+#bilibili
+</code></pre>
+<h4 id="4.3-beautifulsoup">4.3 BeautifulSoup <a class="heading-anchor-permalink" href="#4.3-beautifulsoup">#</a></h4>
+<blockquote>
+<p>BeautifulSoup 对象表示的是一个文档的全部内容.大部分时候,可以把它当作 Tag 对象,它支持 遍历文档树 和 搜索文档树 中描述的大部分的方法.
+因为 BeautifulSoup 对象并不是真正的 HTML 或 XML 的 tag,所以它没有 <code>name</code> 和 <code>attribute</code> 属性.但有时查看它的 <code>.name</code> 属性是很方便的,所以 BeautifulSoup 对象包含了一个值为 <code>[document]</code> 的特殊属性 <code>.name</code></p>
+</blockquote>
+<pre><code class="language-python">print(soup.name)
+print(soup.head.name)
+# [document]
+# head
+</code></pre>
+<h4 id="4.4-comment">4.4 Comment <a class="heading-anchor-permalink" href="#4.4-comment">#</a></h4>
+<blockquote>
+<p>Comment 对象是一个特殊类型的 NavigableString 对象，其实输出的内容仍然不包括注释符号，但是如果不好好处理它，可能会对我们的文本处理造成意想不到的麻烦</p>
+</blockquote>
+<pre><code class="language-python">if type(soup.strong.string)==Comment:
+    print(soup.strong.prettify())
+else:
+    print(soup.strong.string)
+</code></pre>
+<h3 id="5-%E6%90%9C%E7%B4%A2%E6%96%87%E6%A1%A3%E6%A0%91">5 搜索文档树 <a class="heading-anchor-permalink" href="#5-%E6%90%9C%E7%B4%A2%E6%96%87%E6%A1%A3%E6%A0%91">#</a></h3>
+<blockquote>
+<p>Beautiful Soup 定义了很多搜索方法,这里着重介绍 2 个: find() 和 find_all() .其它方法的参数和用法类似,请同学们举一反三</p>
+</blockquote>
+<h4 id="5.1-%E8%BF%87%E6%BB%A4%E5%99%A8">5.1 过滤器 <a class="heading-anchor-permalink" href="#5.1-%E8%BF%87%E6%BB%A4%E5%99%A8">#</a></h4>
+<blockquote>
+<p>介绍 find_all() 方法前,先介绍一下过滤器的类型 ,这些过滤器贯穿整个搜索的 API.过滤器可以被用在 tag 的 name 中,节点的属性中,字符串中或他们的混合中</p>
+</blockquote>
+<h5 id="5.1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2">5.1.1 字符串 <a class="heading-anchor-permalink" href="#5.1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2">#</a></h5>
+<blockquote>
+<p>最简单的过滤器是字符串.在搜索方法中传入一个字符串参数,Beautiful Soup 会查找与字符串完整匹配的内容,下面的例子用于查找文档中所有的<code>&lt;div&gt;</code>标签</p>
+</blockquote>
+<pre><code class="language-python">#返回所有的div标签
+print(soup.find_all('div'))
+</code></pre>
+<blockquote>
+<p>如果传入字节码参数,Beautiful Soup 会当作 UTF-8 编码,可以传入一段 Unicode 编码来避免 Beautiful Soup 解析编码出错</p>
+</blockquote>
+<h5 id="5.1.2-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">5.1.2 正则表达式 <a class="heading-anchor-permalink" href="#5.1.2-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">#</a></h5>
+<p>如果传入正则表达式作为参数,Beautiful Soup 会通过正则表达式的 match() 来匹配内容</p>
+<pre><code class="language-python">#返回所有的div标签
+print (soup.find_all(re.compile(&quot;^div&quot;)))
+</code></pre>
+<h5 id="5.1.3-%E5%88%97%E8%A1%A8">5.1.3 列表 <a class="heading-anchor-permalink" href="#5.1.3-%E5%88%97%E8%A1%A8">#</a></h5>
+<blockquote>
+<p>如果传入列表参数,Beautiful Soup 会将与列表中任一元素匹配的内容返回</p>
+</blockquote>
+<pre><code class="language-python">#返回所有匹配到的span a标签
+print(soup.find_all(['span','a']))
+</code></pre>
+<h5 id="5.1.4-keyword">5.1.4 keyword <a class="heading-anchor-permalink" href="#5.1.4-keyword">#</a></h5>
+<blockquote>
+<p>如果一个指定名字的参数不是搜索内置的参数名,搜索时会把该参数当作指定名字 tag 的属性来搜索,如果包含一个名字为 id 的参数,Beautiful Soup 会搜索每个 tag 的”id”属性</p>
+</blockquote>
+<pre><code class="language-python">#返回id为welcom的标签
+print(soup.find_all(id='welcom'))
+</code></pre>
+<h5 id="5.1.4-true">5.1.4 True <a class="heading-anchor-permalink" href="#5.1.4-true">#</a></h5>
+<blockquote>
+<p>True 可以匹配任何值,下面代码查找到所有的 tag,但是不会返回字符串节点</p>
+</blockquote>
+<h5 id="5.1.5-%E6%8C%89-css-%E6%90%9C%E7%B4%A2">5.1.5 按 CSS 搜索 <a class="heading-anchor-permalink" href="#5.1.5-%E6%8C%89-css-%E6%90%9C%E7%B4%A2">#</a></h5>
+<blockquote>
+<p>按照 CSS 类名搜索 tag 的功能非常实用,但标识 CSS 类名的关键字 class 在 Python 中是保留字,使用 class 做参数会导致语法错误.从 Beautiful Soup 的 4.1.1 版本开始,可以通过 class_ 参数搜索有指定 CSS 类名的 tag</p>
+</blockquote>
+<pre><code class="language-python"># 返回class等于info的div
+print(soup.find_all('div',class_='info'))
+</code></pre>
+<h4 id="5.1.6-%E6%8C%89%E5%B1%9E%E6%80%A7%E7%9A%84%E6%90%9C%E7%B4%A2">5.1.6 按属性的搜索 <a class="heading-anchor-permalink" href="#5.1.6-%E6%8C%89%E5%B1%9E%E6%80%A7%E7%9A%84%E6%90%9C%E7%B4%A2">#</a></h4>
+<pre><code class="language-python">soup.find_all(&quot;div&quot;, attrs={&quot;class&quot;: &quot;info&quot;})
+</code></pre>
+<h3 id="6.-css-%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E6%89%A9%E5%B1%95%EF%BC%89">6. CSS 选择器（扩展） <a class="heading-anchor-permalink" href="#6.-css-%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E6%89%A9%E5%B1%95%EF%BC%89">#</a></h3>
+<p>soup.select(参数)</p>
+<table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tag</td>
+<td>选择指定标签</td>
+</tr>
+<tr>
+<td>*</td>
+<td>选择所有节点</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>选择 id 为 container 的节点</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>选取所有 class 包含 container 的节点</td>
+</tr>
+<tr>
+<td>li a</td>
+<td>选取所有 li 下的所有 a 节点</td>
+</tr>
+<tr>
+<td>ul + p</td>
+<td>(兄弟)选择 ul 后面的第一个 p 元素</td>
+</tr>
+<tr>
+<td>div#id &gt; ul</td>
+<td>(父子)选取 id 为 id 的 div 的第一个 ul 子元素</td>
+</tr>
+<tr>
+<td>table ~ div</td>
+<td>选取与 table 相邻的所有 div 元素</td>
+</tr>
+<tr>
+<td>a[title]</td>
+<td>选取所有有 title 属性的 a 元素</td>
+</tr>
+<tr>
+<td>a[class=”title”]</td>
+<td>选取所有 class 属性为 title 值的 a</td>
+</tr>
+<tr>
+<td>a[href*=”sxt”]</td>
+<td>选取所有 href 属性包含 sxt 的 a 元素</td>
+</tr>
+<tr>
+<td>a[href^=”http”]</td>
+<td>选取所有 href 属性值以 http 开头的 a 元素</td>
+</tr>
+<tr>
+<td>a[href$=”.png”]</td>
+<td>选取所有 href 属性值以.png 结尾的 a 元素</td>
+</tr>
+<tr>
+<td>input[type=“redio”]:checked</td>
+<td>选取选中的 hobby 的元素</td>
+</tr>
+</tbody>
+</table>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

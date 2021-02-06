@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>Scrapy框架高级与动态页面的爬取</span></li>
+<ul>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - CrawlSpider.html">Scrapy 框架   CrawlSpider</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 下载中间件Middleware.html">Scrapy 框架   下载中间件Middleware</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 图片管道使用.html">Scrapy 框架   图片管道使用</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 模拟登录——Request、Response.html">Scrapy 框架   模拟登录——Request、Response</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Scrapy 框架 - 爬取JS生成的动态页面.html">Scrapy 框架   爬取JS生成的动态页面</a></li>
+<li><a class="" href="../Scrapy框架高级与动态页面的爬取/Splash 的使用.html">Splash 的使用</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（上）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（上）/Beautiful Soup.html">Beautiful Soup</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/JsonPath.html">JsonPath</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/PyQuery.html">PyQuery</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/Re.html">Re</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/XPath.html">XPath</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（下）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（下）/Python下Tesseract Ocr引擎及安装介绍.html">Python下Tesseract Ocr引擎及安装介绍</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium 处理滚动条.html">Selenium 处理滚动条</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium与PhantomJS.html">Selenium与PhantomJS</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/爬虫之多线程.html">爬虫之多线程</a></li>
+</ul>
+<li class="heading"><span>类级别的写法与Scrapy框架</span></li>
+<ul>
+<li><a class="" href="Scrapy 数据的保存.html">Scrapy 数据的保存</a></li>
+<li><a class="" href="Scrapy 数据的提取.html">Scrapy 数据的提取</a></li>
+<li><a class="active" href="Scrapy 框架介绍与安装.html">Scrapy 框架介绍与安装</a></li>
+<li><a class="" href="Scrapy 框架使用.html">Scrapy 框架使用</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <p><img src="https://note.youdao.com/yws/api/personal/file/3B46CE1A83254E4ABC7CCBC6DA7F8838?method=download&amp;shareKey=2bba5f9fd137f02bc237bfca800e603a" alt="image"></p>
+<h3 id="1.-scrapy-%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D">1. Scrapy 框架介绍 <a class="heading-anchor-permalink" href="#1.-scrapy-%E6%A1%86%E6%9E%B6%E4%BB%8B%E7%BB%8D">#</a></h3>
+<ul>
+<li>
+<p>Scrapy 是 Python 开发的一个快速,高层次的屏幕抓取和 web 抓取框架，用于抓取 web 站点并从页面中提取结构化的数据。Scrapy = Scrach+Python</p>
+</li>
+<li>
+<p>Scrapy 用途广泛，可以用于数据挖掘、监测和自动化测试、信息处理和历史档案等大量应用范围内抽取结构化数据的应用程序框架，广泛用于工业</p>
+</li>
+<li>
+<p>Scrapy 使用 <code>Twisted</code> 这个异步网络库来处理网络通讯，架构清晰，并且包含了各种中间件接口，可以灵活的完成各种需求。Scrapy 是由 <code>Twisted</code> 写的一个受欢迎的 Python 事件驱动网络框架，它使用的是非堵塞的异步处理</p>
+</li>
+</ul>
+<h4 id="1.1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8-scrapy%EF%BC%9F">1.1 为什么要使用 Scrapy？ <a class="heading-anchor-permalink" href="#1.1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8-scrapy%EF%BC%9F">#</a></h4>
+<ul>
+<li>它更容易构建和大规模的抓取项目</li>
+<li>它内置的机制被称为选择器，用于从网站（网页）上提取数据</li>
+<li>它异步处理请求，速度十分快</li>
+<li>它可以使用自动调节机制自动调整爬行速度</li>
+<li>确保开发人员可访问性</li>
+</ul>
+<h4 id="1.2-scrapy-%E7%9A%84%E7%89%B9%E7%82%B9">1.2 Scrapy 的特点 <a class="heading-anchor-permalink" href="#1.2-scrapy-%E7%9A%84%E7%89%B9%E7%82%B9">#</a></h4>
+<ul>
+<li>Scrapy 是一个开源和免费使用的网络爬虫框架</li>
+<li>Scrapy 生成格式导出如：JSON，CSV 和 XML</li>
+<li>Scrapy 内置支持从源代码，使用 XPath 或 CSS 表达式的选择器来提取数据</li>
+<li>Scrapy 基于爬虫，允许以自动方式从网页中提取数据</li>
+</ul>
+<h4 id="1.3-scrapy-%E7%9A%84%E4%BC%98%E7%82%B9">1.3 Scrapy 的优点 <a class="heading-anchor-permalink" href="#1.3-scrapy-%E7%9A%84%E4%BC%98%E7%82%B9">#</a></h4>
+<ul>
+<li>Scrapy 很容易扩展，快速和功能强大；</li>
+<li>这是一个跨平台应用程序框架（在 Windows，Linux，Mac OS 和 BSD）。</li>
+<li>Scrapy 请求调度和异步处理；</li>
+<li>Scrapy 附带了一个名为 Scrapyd 的内置服务，它允许使用 JSON Web 服务上传项目和控制蜘蛛。</li>
+<li>也能够刮削任何网站，即使该网站不具有原始数据访问 API；</li>
+</ul>
+<h4 id="1.4-%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%A4%A7%E8%87%B4%E5%A6%82%E4%B8%8B">1.4 整体架构大致如下 <a class="heading-anchor-permalink" href="#1.4-%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%A4%A7%E8%87%B4%E5%A6%82%E4%B8%8B">#</a></h4>
+<p><img src="https://images2015.cnblogs.com/blog/918906/201608/918906-20160830220006980-1873919293.png" alt="image"></p>
+<blockquote>
+<p>最简单的单个网页爬取流程是 spiders &gt; scheduler &gt; downloader &gt; spiders &gt; item pipeline</p>
+</blockquote>
+<h4 id="1.5-scrapy-%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%A4%A7%E6%A6%82%E5%A6%82%E4%B8%8B">1.5 Scrapy 运行流程大概如下 <a class="heading-anchor-permalink" href="#1.5-scrapy-%E8%BF%90%E8%A1%8C%E6%B5%81%E7%A8%8B%E5%A4%A7%E6%A6%82%E5%A6%82%E4%B8%8B">#</a></h4>
+<ol>
+<li>引擎从调度器中取出一个链接(URL)用于接下来的抓取</li>
+<li>引擎把 URL 封装成一个请求(Request)传给下载器</li>
+<li>下载器把资源下载下来，并封装成应答包(Response)</li>
+<li>爬虫解析 Response</li>
+<li>解析出实体（Item）,则交给实体管道进行进一步的处理</li>
+<li>解析出的是链接（URL）,则把 URL 交给调度器等待抓取</li>
+</ol>
+<h4 id="1.6-scrapy-%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%BA%86%E4%BB%A5%E4%B8%8B%E7%BB%84%E4%BB%B6">1.6 Scrapy 主要包括了以下组件 <a class="heading-anchor-permalink" href="#1.6-scrapy-%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%BA%86%E4%BB%A5%E4%B8%8B%E7%BB%84%E4%BB%B6">#</a></h4>
+<ul>
+<li>引擎(Scrapy)
+<ul>
+<li>用来处理整个系统的数据流处理, 触发事务(框架核心)</li>
+</ul>
+</li>
+<li>调度器(Scheduler)
+<ul>
+<li>用来接受引擎发过来的请求, 压入队列中, 并在引擎再次请求的时候返回. 可以想像成一个 URL（抓取网页的网址或者说是链接）的优先队列, 由它来决定下一个要抓取的网址是什么, 同时去除重复的网址</li>
+</ul>
+</li>
+<li>下载器(Downloader)
+<ul>
+<li>用于下载网页内容, 并将网页内容返回给蜘蛛(Scrapy 下载器是建立在 twisted 这个高效的异步模型上的)</li>
+</ul>
+</li>
+<li>爬虫(Spiders)
+<ul>
+<li>爬虫是主要干活的, 用于从特定的网页中提取自己需要的信息, 即所谓的实体(Item)。用户也可以从中提取出链接,让 Scrapy 继续抓取下一个页面</li>
+</ul>
+</li>
+<li>项目管道(Pipeline)
+<ul>
+<li>负责处理爬虫从网页中抽取的实体，主要的功能是持久化实体、验证实体的有效性、清除不需要的信息。当页面被爬虫解析后，将被发送到项目管道，并经过几个特定的次序处理数据。</li>
+</ul>
+</li>
+<li>下载器中间件(Downloader Middlewares)
+<ul>
+<li>位于 Scrapy 引擎和下载器之间的框架，主要是处理 Scrapy 引擎与下载器之间的请求及响应</li>
+</ul>
+</li>
+<li>爬虫中间件(Spider Middlewares)
+<ul>
+<li>介于 Scrapy 引擎和爬虫之间的框架，主要工作是处理蜘蛛的响应输入和请求输出</li>
+</ul>
+</li>
+<li>调度中间件(Scheduler Middewares)
+<ul>
+<li>介于 Scrapy 引擎和调度之间的中间件，从 Scrapy 引擎发送到调度的请求和响应</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-%E5%AE%89%E8%A3%85">2 安装 <a class="heading-anchor-permalink" href="#2-%E5%AE%89%E8%A3%85">#</a></h3>
+<pre><code class="language-sh">pip install Scrapy
+</code></pre>
+<p>注：windows 平台需要依赖 pywin32</p>
+<pre><code class="language-text">ModuleNotFoundError: No module named 'win32api'
+</code></pre>
+<pre><code class="language-sh">pip install pypiwin32
+</code></pre>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>

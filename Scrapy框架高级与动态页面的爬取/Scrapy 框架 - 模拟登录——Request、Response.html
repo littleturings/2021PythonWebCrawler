@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /*! ADAPTED
+    Typeplate : Starter Kit
+    URL ........... http://typeplate.com
+    Version ....... 3.0.2
+    Github ........ https://github.com/typeplate/starter-kit
+    Authors ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+    License ....... Creative Commmons Attribution 3.0
+    License URL ... https://github.com/typeplate/starter-kit/blob/master/license.txt
+    */
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        text-rendering: optimizeLegibility;
+        line-height: 1;
+        margin-top: 0;
+        color: #222;
+      }
+
+      blockquote + figcaption cite {
+        display: block;
+        font-size: inherit;
+        text-align: right;
+      }
+
+      body {
+        word-wrap: break-word;
+      }
+
+      pre code {
+        word-wrap: normal;
+      }
+
+      body {
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 2em;
+        /* 2*16 = 32 */
+      }
+
+      h2 {
+        font-size: 1.5em;
+        /* 1.5*16 = 24 */
+      }
+
+      h3 {
+        font-size: 1.17em;
+        /* 1.17*16 = 18.72 */
+      }
+
+      h4 {
+        font-size: 1em;
+        /* 1*16 = 16 */
+      }
+
+      h5 {
+        font-size: 0.83em;
+        /* 0.83*16 = 13.28 */
+      }
+
+      h6 {
+        font-size: 0.75em;
+        /* 0.75*16 = 12 */
+      }
+
+      h1 {
+        margin: 2.42424rem 0 1.454544rem;
+      }
+
+      h2 {
+        margin: 2.0202rem 0 1.21212rem;
+      }
+
+      h3 {
+        margin: 1.61616rem 0 1rem;
+      }
+
+      h4 {
+        margin: 1.21212rem 0 1;
+      }
+
+      h5 {
+        margin: 0.80808rem 0;
+      }
+
+      h6 {
+        margin: 0.70707rem 0;
+      }
+
+      p {
+        margin: auto auto 1.5rem;
+      }
+
+      small {
+        font-size: 65%;
+      }
+
+      input,
+      abbr,
+      acronym,
+      blockquote,
+      code,
+      kbd,
+      q,
+      samp,
+      var {
+        -webkit-hyphens: none;
+        -ms-hyphens: none;
+        hyphens: none;
+      }
+
+      pre {
+        white-space: pre;
+      }
+
+      pre code {
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap;
+      }
+
+      code {
+        white-space: pre;
+        font-family: SF Mono, Consolas, Dejavu Sans Mono, Menlo, monospace;
+      }
+
+      abbr {
+        -webkit-font-variant: small-caps;
+        -moz-font-variant: small-caps;
+        -ms-font-variant: small-caps;
+        font-variant: small-caps;
+        font-weight: 600;
+        text-transform: lowercase;
+        color: gray;
+      }
+
+      abbr[title]:hover {
+        cursor: help;
+      }
+
+      /* FROM http://purecss.io/layouts/side-menu/  adapted to remove pure classes*/
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        color: #444;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: auto;
+      }
+
+      code,
+      pre {
+        background-color: #f5f5f5;
+        color: #444;
+        border-radius: 2px;
+        text-shadow: 0px 1px 0px white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      }
+
+      pre code {
+        border: none;
+        box-shadow: none;
+      }
+
+      pre {
+        padding: 0.5em;
+      }
+
+      code {
+        display: inline-block;
+        padding: 0 0.5em;
+        line-height: 1.4;
+        font-size: 0.9em;
+      }
+
+      table {
+        border-spacing: 0;
+        margin-bottom: 1.5rem;
+      }
+
+      table th,
+      table td {
+        padding: 0.3em 0.7em;
+      }
+
+      table th {
+        background-color: #f4f4f4;
+        border-bottom: 2px solid #444;
+      }
+
+      table td {
+        border: 1px solid #f5f5f5;
+      }
+
+      /* Add transition to containers so they can push in and out. */
+
+      #layout,
+      #menu,
+      .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      /* This is the parent `<div>` that contains the menu and the content area. */
+
+      #layout {
+        position: relative;
+        padding-left: 0;
+      }
+
+      #layout.active #menu {
+        left: 250px;
+        width: 250px;
+      }
+
+      #layout.active .menu-link {
+        left: 250px;
+      }
+
+      /* The content `<div>` is where all your content goes. */
+
+      .content {
+        margin: 50px auto;
+        padding: 0 2em;
+        max-width: 80ex;
+        line-height: 1.6em;
+      }
+
+      /*
+      The `#menu` `<div>` is the parent `<div>` that contains the menu that
+      appears on the left side of the page.
+      */
+
+      #menu {
+        margin-left: -250px;
+        /* "#menu" width */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        /* so the menu or its navicon stays above all content */
+        background: #f4f4f4;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.9em;
+      }
+
+      @media print {
+        #menu,
+        .menu-link {
+          display: none !important;
+        }
+      }
+
+      a,
+      a * {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      a:visited {
+        text-decoration: none;
+        color: #2483cc;
+      }
+
+      /* All anchors inside the menu should be styled like this. */
+
+      #menu a {
+        display: block;
+        padding: 0.5em 0.5em;
+      }
+
+      #menu a:first-letter {
+        text-transform: capitalize;
+      }
+
+      #menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1em 0.5em;
+      }
+
+      #menu ul ul {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+        border-left: 4px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Change color of the anchor links on hover/focus. */
+
+      #menu li a:hover,
+      #menu li a:focus {
+        background: rgba(255, 255, 255, 0.4);
+      }
+
+      /* This styles the selected menu item `<li>`. */
+
+      #menu li a.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+
+      /* This styles a link within a selected menu item `<li>`. */
+
+      #menu li a.active {
+        color: #222;
+      }
+
+      /* This styles the menu heading. */
+
+      #menu li.heading {
+        font-size: 0.9em;
+        text-transform: uppercase;
+        color: #000;
+      }
+
+      #menu li.heading > * {
+        padding: 0.5em;
+        display: block;
+      }
+
+      #menu li.heading a {
+        color: #0c68af;
+      }
+
+      /* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+      /*
+      `.menu-link` represents the responsive menu toggle that shows/hides on
+      small screens.
+      */
+
+      .menu-link {
+        position: fixed;
+        display: block;
+        /* show this only on small screens */
+        top: 0;
+        left: 0;
+        /* "#menu width" */
+        font-size: 10px;
+        /* change this value to increase/decrease button size */
+        z-index: 10;
+        width: 2em;
+        height: auto;
+        padding: 1.6em 1.2em;
+        border-radius: 0 2px 2px 0;
+      }
+
+      .menu-link:hover {
+        background: #f4f4f4;
+      }
+
+      .menu-link span {
+        position: relative;
+        display: block;
+      }
+
+      .menu-link span,
+      .menu-link span:before,
+      .menu-link span:after {
+        background-color: #555;
+        width: 100%;
+        height: 0.2em;
+        border-radius: 1em;
+      }
+
+      .menu-link span:before,
+      .menu-link span:after {
+        position: absolute;
+        margin-top: -0.6em;
+        content: " ";
+      }
+
+      .menu-link span:after {
+        margin-top: 0.6em;
+      }
+
+      /* Hides the menu at `48em`, but modify this based on your app's needs. */
+
+      @media (min-width: 48em) {
+        .header,
+        .content {
+          padding-left: 2em;
+          padding-right: 2em;
+        }
+
+        #layout {
+          padding-left: 250px;
+          /* left col width "#menu" */
+          left: 0;
+        }
+        #menu {
+          left: 250px;
+        }
+
+        .menu-link {
+          position: fixed;
+          left: 250px;
+          display: none;
+        }
+
+        #layout.active .menu-link {
+          left: 250px;
+        }
+      }
+
+      @media (max-width: 48em) {
+        /* Only apply this when the window is small. Otherwise, the following case results in extra padding on the left:
+         * Make the window small.
+         * Tap the menu to trigger the active state.
+         * Make the window large again.
+         */
+        #layout.active {
+          position: relative;
+          left: 250px;
+        }
+      }
+
+      /* Heading anchors and permalinks */
+      h1[id],
+      h2[id],
+      h3[id],
+      h4[id],
+      h5[id],
+      h6[id] {
+        position: relative;
+      }
+      .heading-anchor-permalink {
+        /* Position the permalink to the left of the title */
+        position: absolute;
+        right: 100%;
+        /* Add some spacing as padding to not lose the hover */
+        padding-right: 0.6rem;
+        /* Make it only visible on heading hover, see below */
+        opacity: 0;
+      }
+      h1[id]:hover .heading-anchor-permalink,
+      h2[id]:hover .heading-anchor-permalink,
+      h3[id]:hover .heading-anchor-permalink,
+      h4[id]:hover .heading-anchor-permalink,
+      h5[id]:hover .heading-anchor-permalink,
+      h6[id]:hover .heading-anchor-permalink {
+        opacity: 0.5;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <div id="layout">
+      <!-- Menu toggle -->
+      <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+      </a>
+      <nav id="menu">
+        <ul>
+<li><a class="" href="../index.html">index</a></li>
+<li class="heading"><span>Scrapy框架高级与动态页面的爬取</span></li>
+<ul>
+<li><a class="" href="Scrapy 框架 - CrawlSpider.html">Scrapy 框架   CrawlSpider</a></li>
+<li><a class="" href="Scrapy 框架 - 下载中间件Middleware.html">Scrapy 框架   下载中间件Middleware</a></li>
+<li><a class="" href="Scrapy 框架 - 图片管道使用.html">Scrapy 框架   图片管道使用</a></li>
+<li><a class="active" href="Scrapy 框架 - 模拟登录——Request、Response.html">Scrapy 框架   模拟登录——Request、Response</a></li>
+<li><a class="" href="Scrapy 框架 - 爬取JS生成的动态页面.html">Scrapy 框架   爬取JS生成的动态页面</a></li>
+<li><a class="" href="Splash 的使用.html">Splash 的使用</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（上）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（上）/Beautiful Soup.html">Beautiful Soup</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/JsonPath.html">JsonPath</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/PyQuery.html">PyQuery</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/Re.html">Re</a></li>
+<li><a class="" href="../数据提取与验证码的识别（上）/XPath.html">XPath</a></li>
+</ul>
+<li class="heading"><span>数据提取与验证码的识别（下）</span></li>
+<ul>
+<li><a class="" href="../数据提取与验证码的识别（下）/Python下Tesseract Ocr引擎及安装介绍.html">Python下Tesseract Ocr引擎及安装介绍</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium 处理滚动条.html">Selenium 处理滚动条</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/Selenium与PhantomJS.html">Selenium与PhantomJS</a></li>
+<li><a class="" href="../数据提取与验证码的识别（下）/爬虫之多线程.html">爬虫之多线程</a></li>
+</ul>
+<li class="heading"><span>类级别的写法与Scrapy框架</span></li>
+<ul>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的保存.html">Scrapy 数据的保存</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 数据的提取.html">Scrapy 数据的提取</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架介绍与安装.html">Scrapy 框架介绍与安装</a></li>
+<li><a class="" href="../类级别的写法与Scrapy框架/Scrapy 框架使用.html">Scrapy 框架使用</a></li>
+</ul>
+</ul>
+      </nav>
+      <article id="main" class="content">
+        <h3 id="1.-scrapy---request-%E5%92%8C-response%EF%BC%88%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%EF%BC%89">1. Scrapy - Request 和 Response（请求和响应） <a class="heading-anchor-permalink" href="#1.-scrapy---request-%E5%92%8C-response%EF%BC%88%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%EF%BC%89">#</a></h3>
+<p>Scrapy 的 <code>Request</code> 和 <code>Response</code> 对象用于爬网网站。</p>
+<p>通常，<code>Request</code> 对象在爬虫程序中生成并传递到系统，直到它们到达下载程序，后者执行请求并返回一个 <code>Response</code> 对象，该对象返回到发出请求的爬虫程序。</p>
+<pre><code class="language-text">sequenceDiagram
+爬虫-&gt;&gt;Request: 创建
+Request-&gt;&gt;Response:获取下载数据
+Response-&gt;&gt;爬虫:数据
+</code></pre>
+<h3 id="2.-request-%E5%AF%B9%E8%B1%A1">2. Request 对象 <a class="heading-anchor-permalink" href="#2.-request-%E5%AF%B9%E8%B1%A1">#</a></h3>
+<pre><code class="language-python">class scrapy.http.Request(url[, callback, method='GET', headers, body, cookies, meta, encoding='utf-8', priority=0, dont_filter=False, errback])
+</code></pre>
+<p>一个 <code>Request</code> 对象表示一个 HTTP 请求，它通常是在爬虫生成，并由下载执行，从而生成 <code>Response</code></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url（string）</td>
+<td>此请求的网址</td>
+</tr>
+<tr>
+<td>callback（callable）</td>
+<td>将使用此请求的响应（一旦下载）作为其第一个参数调用的函数。有关更多信息，请参阅下面的将附加数据传递给回调函数。如果请求没有指定回调，parse()将使用 spider 的 方法。请注意，如果在处理期间引发异常，则会调用 errback。</td>
+</tr>
+<tr>
+<td>method（string）</td>
+<td>此请求的 HTTP 方法。默认为’GET’。可设置为&quot;GET&quot;, “POST”, &quot;PUT&quot;等，且保证字符串大写</td>
+</tr>
+<tr>
+<td>meta（dict）</td>
+<td>属性的初始值 Request.meta,在不同的请求之间传递数据使用</td>
+</tr>
+<tr>
+<td>body（str 或 unicode）</td>
+<td>请求体。如果 unicode 传递了 a，那么它被编码为 str 使用传递的编码（默认为 utf-8）。如果 body 没有给出，则存储一个空字符串。不管这个参数的类型，存储的最终值将是一个 str（不会是 unicode 或 None）。</td>
+</tr>
+<tr>
+<td>headers（dict）</td>
+<td>这个请求的头。dict 值可以是字符串（对于单值标头）或列表（对于多值标头）。如果 None 作为值传递，则不会发送 HTTP 头.一般不需要</td>
+</tr>
+<tr>
+<td>encoding</td>
+<td>使用默认的 ‘utf-8’ 就行。</td>
+</tr>
+<tr>
+<td>cookie（dict 或 list）</td>
+<td>请求 cookie。这些可以以两种形式发送。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>使用 dict：</p>
+<pre><code class="language-python">request_with_cookies = Request(url=&quot;http://www.sxt.cn/index/login/login.html&quot;,)
+</code></pre>
+</li>
+<li>
+<p>使用列表：</p>
+<pre><code class="language-python">request_with_cookies = Request(url=&quot;http://www.example.com&quot;,
+                            cookies=[{'name': 'currency',
+                                    'value': 'USD',
+                                    'domain': 'example.com',
+                                    'path': '/currency'}])
+</code></pre>
+<p>后一种形式允许定制 cookie 的 <code>domain</code> 属性和 <code>path</code> 属性。这只有在保存 Cookie 用于以后的请求时才有用</p>
+<pre><code class="language-python">request_with_cookies = Request(url=&quot;http://www.example.com&quot;,
+                            cookies={'currency': 'USD', 'country': 'UY'},
+                            meta={'dont_merge_cookies': True})
+</code></pre>
+</li>
+</ul>
+<h4 id="%E5%B0%86%E9%99%84%E5%8A%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E7%BB%99%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">将附加数据传递给回调函数 <a class="heading-anchor-permalink" href="#%E5%B0%86%E9%99%84%E5%8A%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92%E7%BB%99%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">#</a></h4>
+<p>请求的回调是当下载该请求的响应时将被调用的函数。将使用下载的 Response 对象作为其第一个参数来调用回调函数</p>
+<pre><code class="language-python">def parse_page1(self, response):
+    item = MyItem()
+    item['main_url'] = response.url
+    request = scrapy.Request(&quot;http://www.example.com/some_page.html&quot;,
+                             callback=self.parse_page2)
+    request.meta['item'] = item
+    return request
+
+def parse_page2(self, response):
+    item = response.meta['item']
+    item['other_url'] = response.url
+    return item
+</code></pre>
+<h3 id="3.-%E8%AF%B7%E6%B1%82%E5%AD%90%E7%B1%BB-formrequest-%E5%AF%B9%E8%B1%A1">3. 请求子类 FormRequest 对象 <a class="heading-anchor-permalink" href="#3.-%E8%AF%B7%E6%B1%82%E5%AD%90%E7%B1%BB-formrequest-%E5%AF%B9%E8%B1%A1">#</a></h3>
+<p><code>FormRequest</code> 类扩展了 Request 具有处理 HTML 表单的功能的基础。它使用 <code>lxml.html</code> 表单 从 <code>Response</code> 对象的表单数据预填充表单字段</p>
+<pre><code class="language-python">class scrapy.http.FormRequest(url[, formdata, ...])
+</code></pre>
+<p>本 <code>FormRequest</code> 类增加了新的构造函数的参数。其余的参数与 <code>Request</code> 类相同，这里没有记录</p>
+<ul>
+<li>参数：<code>formdata</code>（元组的 dict 或 iterable） - 是一个包含 HTML Form 数据的字典（或（key，value）元组的迭代），它将被 url 编码并分配给请求的主体。</li>
+</ul>
+<p>该 <code>FormRequest</code> 对象支持除标准以下类方法 Request 的方法：</p>
+<pre><code class="language-python">classmethod from_response(response[, formname=None, formid=None, formnumber=0, formdata=None, formxpath=None, formcss=None, clickdata=None, dont_click=False, ...])
+</code></pre>
+<p>返回一个新 <code>FormRequest</code> 对象，其中的表单字段值已预先 <code>&lt;form&gt;</code> 填充在给定响应中包含的 HTML 元素中.</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>response（Responseobject）</td>
+<td>包含将用于预填充表单字段的 HTML 表单的响应</td>
+</tr>
+<tr>
+<td>formname（string）</td>
+<td>如果给定，将使用 name 属性设置为此值的形式</td>
+</tr>
+<tr>
+<td>formid（string）</td>
+<td>如果给定，将使用 id 属性设置为此值的形式</td>
+</tr>
+<tr>
+<td>formxpath（string）</td>
+<td>如果给定，将使用匹配 xpath 的第一个表单</td>
+</tr>
+<tr>
+<td>formcss（string）</td>
+<td>如果给定，将使用匹配 css 选择器的第一个形式</td>
+</tr>
+<tr>
+<td>formnumber（integer）</td>
+<td>当响应包含多个表单时要使用的表单的数量。第一个（也是默认）是 0</td>
+</tr>
+<tr>
+<td>formdata（dict）</td>
+<td>要在表单数据中覆盖的字段。如果响应元素中已存在字段，则其值将被在此参数中传递的值覆盖</td>
+</tr>
+<tr>
+<td>clickdata（dict）</td>
+<td>查找控件被点击的属性。如果没有提供，表单数据将被提交，模拟第一个可点击元素的点击。除了 html 属性，控件可以通过其相对于表单中其他提交表输入的基于零的索引，通过 nr 属性来标识</td>
+</tr>
+<tr>
+<td>dont_click（boolean）</td>
+<td>如果为 True，表单数据将在不点击任何元素的情况下提交</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3.1-%E8%AF%B7%E6%B1%82%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">3.1 请求使用示例 <a class="heading-anchor-permalink" href="#3.1-%E8%AF%B7%E6%B1%82%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">#</a></h4>
+<p>使用 <code>FormRequest</code> 通过 HTTP POST 发送数据</p>
+<p>如果你想在你的爬虫中模拟 HTML 表单 POST 并发送几个键值字段，你可以返回一个 <code>FormRequest</code> 对象（从你的爬虫）像这样：</p>
+<pre><code class="language-python">return [FormRequest(url=&quot;http://www.example.com/post/action&quot;,
+                    formdata={'name': 'John Doe', 'age': '27'},
+                    callback=self.after_post)]
+</code></pre>
+<p>使用 <code>FormRequest.from_response()</code> 来模拟用户登录</p>
+<p>网站通常通过元素（例如会话相关数据或认证令牌（用于登录页面））提供预填充的表单字段。进行剪贴时，您需要自动预填充这些字段，并且只覆盖其中的一些，例如用户名和密码。您可以使用 此作业的方法。这里有一个使用它的爬虫示例：</p>
+<pre><code class="language-html">&lt;input type=&quot;hidden&quot; /&gt; FormRequest.from_response()
+</code></pre>
+<pre><code class="language-python">import scrapy
+
+class LoginSpider(scrapy.Spider):
+    name = 'example.com'
+    start_urls = ['http://www.example.com/users/login.php']
+
+    def parse(self, response):
+        return scrapy.FormRequest.from_response(
+            response,
+            formdata={'username': 'john', 'password': 'secret'},
+            callback=self.after_login
+        )
+
+    def after_login(self, response):
+        # check login succeed before going on
+        if &quot;authentication failed&quot; in response.body:
+            self.logger.error(&quot;Login failed&quot;)
+            return
+
+        # continue scraping with authenticated session...
+</code></pre>
+<h3 id="4-%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1">4 响应对象 <a class="heading-anchor-permalink" href="#4-%E5%93%8D%E5%BA%94%E5%AF%B9%E8%B1%A1">#</a></h3>
+<pre><code class="language-python">class scrapy.http.Response(url[, status=200, headers=None, body=b'', flags=None, request=None])
+</code></pre>
+<p>一个 <code>Response</code> 对象表示的 HTTP 响应，这通常是下载（由下载），并供给到爬虫进行处理</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url（string）</td>
+<td>此响应的 URL</td>
+</tr>
+<tr>
+<td>status（integer）</td>
+<td>响应的 HTTP 状态。默认为 200</td>
+</tr>
+<tr>
+<td>headers（dict）</td>
+<td>这个响应的头。dict 值可以是字符串（对于单值标头）或列表（对于多值标头）</td>
+</tr>
+<tr>
+<td>body（str）</td>
+<td>响应体。它必须是 str，而不是 unicode，除非你使用一个编码感知响应子类，如 TextResponse</td>
+</tr>
+<tr>
+<td>flags（list）</td>
+<td>是一个包含属性初始值的 Response.flags 列表。如果给定，列表将被浅复制</td>
+</tr>
+<tr>
+<td>request（Requestobject）</td>
+<td>属性的初始值 Response.request。这代表 Request 生成此响应</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5.-%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95">5. 模拟登录 <a class="heading-anchor-permalink" href="#5.-%E6%A8%A1%E6%8B%9F%E7%99%BB%E5%BD%95">#</a></h3>
+<p>使用的函数</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start_requests()</td>
+<td>可以返回一个请求给爬虫的起始网站，这个返回的请求相当于 start_urls，start_requests()返回的请求会替代 start_urls 里的请求</td>
+</tr>
+<tr>
+<td>Request()</td>
+<td>get 请求，可以设置，url、cookie、回调函数</td>
+</tr>
+<tr>
+<td>FormRequest.from_response()</td>
+<td>表单 post 提交，第一个必须参数，上一次响应 cookie 的 response 对象，其他参数，cookie、url、表单内容等</td>
+</tr>
+<tr>
+<td>yield Request()</td>
+<td>可以将一个新的请求返回给爬虫执行</td>
+</tr>
+</tbody>
+</table>
+<p>在发送请求时 cookie 的操作</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>meta={‘cookiejar’:1}</td>
+<td>表示开启 cookie 记录，首次请求时写在 Request() 里</td>
+</tr>
+<tr>
+<td>meta={‘cookiejar’:response.meta[‘cookiejar’]}</td>
+<td>表示使用上一次 response 的 cookie，写在 FormRequest.from_response() 里 post 授权</td>
+</tr>
+<tr>
+<td>meta={‘cookiejar’:True}</td>
+<td>表示使用授权后的 cookie 访问需要登录查看的页面</td>
+</tr>
+</tbody>
+</table>
+<h4 id="%E8%8E%B7%E5%8F%96-scrapy-%E6%A1%86%E6%9E%B6-cookies">获取 Scrapy 框架 Cookies <a class="heading-anchor-permalink" href="#%E8%8E%B7%E5%8F%96-scrapy-%E6%A1%86%E6%9E%B6-cookies">#</a></h4>
+<p>样例代码</p>
+<p><code>start_requests()</code>方法，可以返回一个请求给爬虫的起始网站，这个返回的请求相当于 <code>start_urls</code>, <code>start_requests()</code> 返回的请求会替代 <code>start_urls</code> 里的请求</p>
+<p>在发送请求时 cookie 的操作</p>
+<p><code>meta={'cookiejar':1}</code>表示开启 cookie 记录，首次请求时写在 <code>Request()</code> 里</p>
+<p><code>meta={'cookiejar':response.meta['cookiejar']}</code>表示使用上一次 Response 的 cookie，写在 <code>Request</code> 里 POST 授权</p>
+<pre><code class="language-python">import scrapy
+from scrapy import Request
+from scrapy import FormRequest
+
+
+class SxtSpiderSpider(scrapy.Spider):
+    name = 'sxt1'
+    allowed_domains = ['sxt.cn']
+
+    def start_requests(self):
+        return [Request('http://www.sxt.cn/index/login/login.html', meta={'cookiejar': 1}, callback=self.parse)]
+
+    def parse(self, response):
+        formdata = {
+            &quot;user&quot;: &quot;17703181473&quot;, &quot;password&quot;: &quot;123456&quot;
+        }
+        return FormRequest(                                        formdata=formdata,
+                                        url='http://www.sxt.cn/index/login/login.html',
+                                        meta={'cookiejar': response.meta['cookiejar']},
+                                        callback=self.login_after)
+
+    def login_after(self, response):
+        yield scrapy.Request('http://www.sxt.cn/index/user.html',
+                             meta={&quot;cookiejar&quot;: response.meta['cookiejar']},
+                             callback=self.next)
+    def next(self,response):
+        print(response.text)
+</code></pre>
+
+      </article>
+    </div>
+    <script>
+      // Load contents.json if you need it
+    </script>
+    <script>
+      // FROM http://purecss.io/js/ui.js
+      (function(window, document) {
+        var layout = document.getElementById("layout"),
+          menu = document.getElementById("menu"),
+          menuLink = document.getElementById("menuLink");
+
+        function toggleClass(element, className) {
+          var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
+
+          for (; i < length; i++) {
+            if (classes[i] === className) {
+              classes.splice(i, 1);
+              break;
+            }
+          }
+          // The className is not found
+          if (length === classes.length) {
+            classes.push(className);
+          }
+
+          element.className = classes.join(" ");
+        }
+
+        menuLink.onclick = function(e) {
+          var active = "active";
+
+          e.preventDefault();
+          toggleClass(layout, active);
+          toggleClass(menu, active);
+          toggleClass(menuLink, active);
+        };
+      })(this, this.document);
+    </script>
+  </body>
+</html>
